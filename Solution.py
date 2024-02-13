@@ -1,4 +1,10 @@
 class Solution:
+	def isPalindrome(self, x: int) -> bool:
+		x = str(x)
+		if x[::-1] == x:
+			return True
+		return False
+
 	def twoSum(self, nums: list[int], target: int) -> list[int]:
 		answer = []
 		ind1 = 0
