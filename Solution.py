@@ -8,6 +8,17 @@ class ListNode:
 
 
 class Solution:
+	def removeDuplicates(self, nums: list[int]) -> int:
+		if not nums:
+			return 0
+		k = 1
+		for i in range(1, len(nums)):
+			if nums[i] != nums[i - 1]:
+				nums[k] = nums[i]
+				k += 1
+
+		return k
+
 	def mergeTwoLists(self, list1: typing.Optional[ListNode],
 	                  list2: typing.Optional[ListNode]) -> typing.Optional[ListNode]:
 		res = ListNode(0)
@@ -86,7 +97,7 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	res = s.mergeTwoLists([1,2,4], [1,3,4])
+	res = s.mergeTwoLists([1, 2, 4], [1, 3, 4])
 	# res = s.romanToInt('I')
 	# res = s.twoSum([3,3], 6)
 	print(res)
