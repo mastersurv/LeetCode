@@ -8,6 +8,9 @@ class ListNode:
 
 
 class Solution:
+	def lengthOfLastWord(self, s: str) -> int:
+		return len(s.split()[-1])
+
 	def plusOne(self, digits: List[int]) -> List[int]:
 		n = len(digits)
 		for i in range(n - 1, -1, -1):
