@@ -1,5 +1,5 @@
 import typing
-
+from typing import List
 
 class ListNode:
 	def __init__(self, val=0, next=None):
@@ -8,6 +8,12 @@ class ListNode:
 
 
 class Solution:
+	def mySqrt(self, x: int) -> int:
+		i = 0
+		while i * i < x:
+			i += 1
+		return i if i * i == x else i - 1
+
 	def lengthOfLastWord(self, s: str) -> int:
 		return len(s.split()[-1])
 
@@ -120,7 +126,8 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	res = s.mergeTwoLists([1, 2, 4], [1, 3, 4])
+	res = s.mySqrt(2)
+	# res = s.mergeTwoLists([1, 2, 4], [1, 3, 4])
 	# res = s.romanToInt('I')
 	# res = s.twoSum([3,3], 6)
 	print(res)
