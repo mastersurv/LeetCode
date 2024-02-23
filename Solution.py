@@ -8,6 +8,9 @@ class ListNode:
 
 
 class Solution:
+	def strStr(self, haystack: str, needle: str) -> int:
+		return haystack.index(needle) if needle in haystack else -1
+
 	def mySqrt(self, x: int) -> int:
 		i = 0
 		while i * i < x:
@@ -126,7 +129,8 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	res = s.mySqrt(2)
+	res = s.strStr("leetcode", "leeto")
+	# res = s.mySqrt(2)
 	# res = s.mergeTwoLists([1, 2, 4], [1, 3, 4])
 	# res = s.romanToInt('I')
 	# res = s.twoSum([3,3], 6)
