@@ -8,6 +8,11 @@ class ListNode:
 
 
 class Solution:
+	def singleNumber(self, nums: List[int]) -> int:
+		for i in nums:
+			if nums.count(i) == 1:
+				return i
+
 	def strStr(self, haystack: str, needle: str) -> int:
 		return haystack.index(needle) if needle in haystack else -1
 
