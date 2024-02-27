@@ -8,6 +8,17 @@ class ListNode:
 
 
 class Solution:
+	def isPalindrome(self, s: str) -> bool:
+		ls = list(s)
+		i = 0
+		while i < len(ls):
+			if not ls[i].isalpha() and not ls[i].isdigit():
+				ls.pop(i)
+			else:
+				i += 1
+		new_s = ''.join(ls).lower()
+		return new_s[::-1] == new_s
+
 	def singleNumber(self, nums: List[int]) -> int:
 		for i in nums:
 			if nums.count(i) == 1:
@@ -112,11 +123,11 @@ class Solution:
 			res = alphabet[s[0]]
 		return res
 
-	def isPalindrome(self, x: int) -> bool:
-		x = str(x)
-		if x[::-1] == x:
-			return True
-		return False
+	# def isPalindrome(self, x: int) -> bool:
+	# 	x = str(x)
+	# 	if x[::-1] == x:
+	# 		return True
+	# 	return False
 
 	def twoSum(self, nums: list[int], target: int) -> list[int]:
 		answer = []
@@ -134,7 +145,8 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	res = s.strStr("leetcode", "leeto")
+	res = s.isPalindrome(" ")
+	# res = s.strStr("leetcode", "leeto")
 	# res = s.mySqrt(2)
 	# res = s.mergeTwoLists([1, 2, 4], [1, 3, 4])
 	# res = s.romanToInt('I')
