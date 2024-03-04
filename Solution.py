@@ -8,6 +8,17 @@ class ListNode:
 
 
 class Solution:
+	def moveZeroes(self, nums: List[int]) -> None:
+		insert_pos = 0
+
+		for i in range(len(nums)):
+			if nums[i] != 0:
+				nums[insert_pos] = nums[i]
+				insert_pos += 1
+
+		for i in range(insert_pos, len(nums)):
+			nums[i] = 0
+
 	def majorityElement(self, nums: List[int]) -> int:
 		count = 0
 		candidate = None
@@ -190,7 +201,8 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	res = s.isPalindrome(" ")
+	res = s.moveZeroes([0,1,0,3,12])
+	# res = s.isPalindrome(" ")
 	# res = s.strStr("leetcode", "leeto")
 	# res = s.mySqrt(2)
 	# res = s.mergeTwoLists([1, 2, 4], [1, 3, 4])
