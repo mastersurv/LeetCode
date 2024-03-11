@@ -8,6 +8,9 @@ class ListNode:
 
 
 class Solution:
+	def countSegments(self, s: str) -> int:
+		return len(s.split())
+
 	def getRow(self, rowIndex: int) -> List[int]:
 		if rowIndex < 0:
 			return []
