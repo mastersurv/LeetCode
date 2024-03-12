@@ -8,6 +8,14 @@ class ListNode:
 
 
 class Solution:
+	def thirdMax(self, nums: List[int]) -> int:
+		distinct_nums = sorted(set(nums), reverse=True)
+
+		if len(distinct_nums) < 3:
+			return distinct_nums[0]
+
+		return distinct_nums[2]
+
 	def countSegments(self, s: str) -> int:
 		return len(s.split())
 
@@ -278,7 +286,8 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	res = s.moveZeroes([0,1,0,3,12])
+	res = s.thirdMax([2,2,3,1])
+	# res = s.moveZeroes([0,1,0,3,12])
 	# res = s.isPalindrome(" ")
 	# res = s.strStr("leetcode", "leeto")
 	# res = s.mySqrt(2)
