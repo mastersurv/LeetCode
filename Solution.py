@@ -8,6 +8,15 @@ class ListNode:
 
 
 class Solution:
+	def hammingDistance(self, x: int, y: int) -> int:
+		xor_result = x ^ y
+		distance = 0
+		while xor_result:
+			if xor_result & 1:
+				distance += 1
+			xor_result >>= 1
+		return distance
+
 	def thirdMax(self, nums: List[int]) -> int:
 		distinct_nums = sorted(set(nums), reverse=True)
 
