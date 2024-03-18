@@ -8,6 +8,12 @@ class ListNode:
 
 
 class Solution:
+	def addDigits(self, num: int) -> int:
+		while True:
+			num = sum(tuple(map(int, str(num))))
+			if num < 10:
+				return num
+
 	def addStrings(self, num1: str, num2: str) -> str:
 		num1 = num1[::-1]
 		num2 = num2[::-1]
@@ -316,7 +322,8 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	res = s.thirdMax([2,2,3,1])
+	# res = s.thirdMax([2,2,3,1])
+	res = s.addDigits(0)
 	# res = s.moveZeroes([0,1,0,3,12])
 	# res = s.isPalindrome(" ")
 	# res = s.strStr("leetcode", "leeto")
