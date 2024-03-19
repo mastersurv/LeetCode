@@ -8,6 +8,12 @@ class ListNode:
 
 
 class Solution:
+	def singleNumber(self, nums: List[int]) -> int:
+		set_nums = set(nums)
+		for i in set_nums:
+			if nums.count(i) == 1:
+				return i
+
 	def addDigits(self, num: int) -> int:
 		while True:
 			num = sum(tuple(map(int, str(num))))
@@ -323,7 +329,8 @@ class Solution:
 if __name__ == '__main__':
 	s = Solution()
 	# res = s.thirdMax([2,2,3,1])
-	res = s.addDigits(0)
+	res = s.singleNumber([0,1,0,1,0,1,99])
+	# res = s.addDigits(0)
 	# res = s.moveZeroes([0,1,0,3,12])
 	# res = s.isPalindrome(" ")
 	# res = s.strStr("leetcode", "leeto")
