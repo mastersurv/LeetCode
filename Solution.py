@@ -8,6 +8,20 @@ class ListNode:
 
 
 class Solution:
+	def fib(self, n: int) -> int:
+		if n == 0:
+			return 0
+		elif n == 1:
+			return 1
+		elif n == 2:
+			return 1
+		else:
+			prev, current = 0, 1
+			for i in range(2, n + 1):
+				prev, current = current, prev + current
+			return current
+
+
 	def singleNumber(self, nums: List[int]) -> int:
 		set_nums = set(nums)
 		for i in set_nums:
@@ -329,7 +343,8 @@ class Solution:
 if __name__ == '__main__':
 	s = Solution()
 	# res = s.thirdMax([2,2,3,1])
-	res = s.singleNumber([0,1,0,1,0,1,99])
+	# res = s.singleNumber([0,1,0,1,0,1,99])
+	res = s.fib(7)
 	# res = s.addDigits(0)
 	# res = s.moveZeroes([0,1,0,3,12])
 	# res = s.isPalindrome(" ")
