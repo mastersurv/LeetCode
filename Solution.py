@@ -8,6 +8,17 @@ class ListNode:
 
 
 class Solution:
+	def checkPerfectNumber(self, num: int) -> bool:
+		divisor_sum = 1
+
+		for i in range(2, int(num ** 0.5) + 1):
+			if num % i == 0:
+				divisor_sum += i
+				if i != num // i:
+					divisor_sum += num // i
+
+		return divisor_sum == num
+
 	def fib(self, n: int) -> int:
 		if n == 0:
 			return 0
@@ -344,7 +355,8 @@ if __name__ == '__main__':
 	s = Solution()
 	# res = s.thirdMax([2,2,3,1])
 	# res = s.singleNumber([0,1,0,1,0,1,99])
-	res = s.fib(7)
+	# res = s.fib(7)
+	res = s.checkPerfectNumber(99999996)
 	# res = s.addDigits(0)
 	# res = s.moveZeroes([0,1,0,3,12])
 	# res = s.isPalindrome(" ")
