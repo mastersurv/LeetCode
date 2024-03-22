@@ -8,6 +8,9 @@ class ListNode:
 
 
 class Solution:
+	def detectCapitalUse(self, word: str) -> bool:
+		return word in (word.capitalize(), word.lower(), word.upper())
+
 	def checkPerfectNumber(self, num: int) -> bool:
 		divisor_sum = 1
 
@@ -353,10 +356,11 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
+	res = s.detectCapitalUse("FlaG")
 	# res = s.thirdMax([2,2,3,1])
 	# res = s.singleNumber([0,1,0,1,0,1,99])
 	# res = s.fib(7)
-	res = s.checkPerfectNumber(99999996)
+	# res = s.checkPerfectNumber(99999996)
 	# res = s.addDigits(0)
 	# res = s.moveZeroes([0,1,0,3,12])
 	# res = s.isPalindrome(" ")
