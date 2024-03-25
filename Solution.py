@@ -8,6 +8,22 @@ class ListNode:
 
 
 class Solution:
+	def findErrorNums(self, nums: List[int]) -> List[int]:
+		num_set = set()
+		duplicate = -1
+		missing = -1
+
+		for num in nums:
+			if num in num_set:
+				duplicate = num
+			else:
+				num_set.add(num)
+
+		all_nums = set(range(1, len(nums) + 1))
+		missing = (all_nums - num_set).pop()
+
+		return [duplicate, missing]
+
 	def detectCapitalUse(self, word: str) -> bool:
 		return word in (word.capitalize(), word.lower(), word.upper())
 
